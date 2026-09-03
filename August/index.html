@@ -1,1 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Life</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --teal: #017069;
+            --dark-teal: #005B56;
+            --deep-teal: #073F3C;
+
+            --cream: #F1E1CA;
+            --paper: #FAF4EA;
+
+            --gold: #D9A441;
+            --coral: #D97955;
+
+            --white: #FFFFFF;
+
+            --text: #173B39;
+            --muted: #6B7D79;
+
+            --border: rgba(1,112,105,0.14);
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "DM Sans", sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(217,164,65,0.14),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(1,112,105,0.12),
+                    transparent 30%
+                ),
+                var(--paper);
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            padding: 26px 6%;
+        }
+
+
+        .topbar {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            text-decoration: none;
+
+            color: var(--deep-teal);
+        }
+
+
+        .logo {
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: var(--teal);
+
+            color: var(--cream);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            border: 4px solid var(--cream);
+
+            box-shadow:
+                0 0 0 1px rgba(1,112,105,0.2),
+                0 8px 20px rgba(1,112,105,0.12);
+        }
+
+
+        .brand-text strong {
+
+            display: block;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 800;
+        }
+
+
+        .brand-text span {
+
+            display: block;
+
+            margin-top: 2px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            color: var(--muted);
+
+            letter-spacing: 0.8px;
+
+            text-transform: uppercase;
+        }
+
+
+        .back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.65);
+
+            color: var(--dark-teal);
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.25s ease;
+        }
+
+
+        .back:hover {
+
+            background: var(--white);
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(1,112,105,0.08);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 45px 6% 80px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            position: relative;
+
+            padding: 55px 50px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--deep-teal),
+                    var(--dark-teal)
+                );
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(0,70,65,0.14);
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(217,164,65,0.14);
+
+            top: -120px;
+
+            right: -70px;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(217,121,85,0.12);
+
+            bottom: -100px;
+
+            left: -60px;
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .eyebrow {
+
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(241,225,202,0.12);
+
+            border:
+                1px solid rgba(241,225,202,0.2);
+
+            color: var(--cream);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+
+        h1 {
+
+            font-family: "Manrope", sans-serif;
+
+            color: var(--white);
+
+            font-size: clamp(42px,6vw,70px);
+
+            line-height: 0.98;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 18px;
+        }
+
+
+        h1 span {
+
+            color: var(--cream);
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            color:
+                rgba(255,255,255,0.78);
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SECTION HEADER
+        ========================= */
+
+        .section-header {
+
+            margin-top: 55px;
+
+            margin-bottom: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 20px;
+        }
+
+
+        .section-header h2 {
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 25px;
+
+            letter-spacing: -0.8px;
+
+            color: var(--deep-teal);
+        }
+
+
+        .count {
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: var(--teal);
+
+            background:
+                rgba(1,112,105,0.08);
+
+            padding: 8px 13px;
+
+            border-radius: 30px;
+        }
+
+
+        /* =========================
+           EVENT GRID
+        ========================= */
+
+        .events {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px,1fr)
+                );
+
+            gap: 20px;
+        }
+
+
+        .event-card {
+
+            position: relative;
+
+            min-height: 200px;
+
+            padding: 27px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.82);
+
+            border:
+                1px solid var(--border);
+
+            text-decoration: none;
+
+            color: var(--text);
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .event-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 110px;
+            height: 110px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(217,164,65,0.10);
+
+            right: -35px;
+
+            top: -35px;
+        }
+
+
+        .event-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(1,112,105,0.3);
+
+            box-shadow:
+                0 18px 35px
+                rgba(0,70,65,0.11);
+        }
+
+
+        .event-number {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: var(--cream);
+
+            color: var(--dark-teal);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        .event-info {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 25px;
+        }
+
+
+        .event-date {
+
+            display: inline-block;
+
+            margin-bottom: 9px;
+
+            padding: 5px 9px;
+
+            border-radius: 7px;
+
+            background:
+                rgba(217,164,65,0.14);
+
+            color: #9A6A12;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        .event-title {
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            color: var(--deep-teal);
+
+            line-height: 1.2;
+
+            margin-bottom: 8px;
+        }
+
+
+        .event-link {
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: var(--teal);
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+        }
+
+
+        /* =========================
+           STATES
+        ========================= */
+
+        .state {
+
+            grid-column: 1 / -1;
+
+            padding: 55px 20px;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.6);
+
+            border:
+                1px dashed
+                rgba(1,112,105,0.25);
+
+            color: var(--muted);
+        }
+
+
+        .state strong {
+
+            display: block;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 18px;
+
+            color: var(--deep-teal);
+
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 0 6% 35px;
+
+            text-align: center;
+
+            font-size: 11px;
+
+            color: #82908D;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:650px) {
+
+            header {
+                padding: 20px 5%;
+            }
+
+
+            .brand-text span {
+                display: none;
+            }
+
+
+            .back {
+                padding: 9px 12px;
+            }
+
+
+            main {
+                padding:
+                    25px 5% 60px;
+            }
+
+
+            .hero {
+
+                padding: 40px 27px;
+
+                border-radius: 22px;
+            }
+
+
+            h1 {
+
+                font-size: 45px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .section-header {
+
+                margin-top: 40px;
+            }
+
+
+            .section-header h2 {
+
+                font-size: 21px;
+            }
+
+
+            .events {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .event-card {
+
+                min-height: 175px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="topbar">
+
+        <a href="../index.html" class="brand">
+
+            <div class="logo">
+                G
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    GITAM Campus Life
+                </strong>
+
+                <span>
+                    Digital Newsletter
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <a href="../index.html" class="back">
+            ← Dashboard
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Monthly Edition
+            </div>
+
+
+            <h1>
+                <span id="monthName">
+                    Loading...
+                </span>
+            </h1>
+
+
+            <p class="hero-description">
+
+                Explore the events, activities and
+                stories featured in this month's
+                GITAM Campus Life newsletter.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="section-header">
+
+        <h2>
+            Events & Stories
+        </h2>
+
+
+        <div class="count" id="eventCount">
+            Loading...
+        </div>
+
+    </div>
+
+
+
+    <section
+        id="events"
+        class="events"
+    >
+
+        <div class="state">
+
+            <strong>
+                Loading stories...
+            </strong>
+
+            Fetching this month's events.
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    GITAM Campus Life · Digital Newsletter
+
+</footer>
+
+
+
+<script>
+
+
+/* ============================================================
+   AUTOMATIC REPOSITORY / MONTH DETECTION
+   ============================================================
+
+   Example URL:
+
+   https://rehaan0745.github.io/Campus-LIfe/August/
+
+   The script automatically determines:
+
+   owner       → rehaan0745
+   repository  → Campus-LIfe
+   month       → August
+
+   Nothing is hard-coded.
+   ============================================================ */
+
+
+const pathParts =
+    window.location.pathname
+        .split("/")
+        .filter(Boolean);
+
+
+/*
+ * GitHub username
+ */
+
+const owner =
+    window.location.hostname
+        .split(".")[0];
+
+
+/*
+ * Repository name
+ */
+
+const repo =
+    pathParts[0];
+
+
+/*
+ * Month folder
+ *
+ * Since index.html is inside the month folder,
+ * the folder immediately before index.html
+ * is the month.
+ */
+
+const monthFolder =
+    decodeURIComponent(
+        pathParts[pathParts.length - 1]
+    );
+
+
+/*
+ * Display month
+ */
+
+const monthName =
+    monthFolder.charAt(0).toUpperCase() +
+    monthFolder.slice(1).toLowerCase();
+
+
+document.getElementById("monthName")
+    .textContent = monthName;
+
+
+
+/* ============================================================
+   GITHUB API
+   ============================================================ */
+
+const apiURL =
+    `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(monthFolder)}`;
+
+
+const eventsContainer =
+    document.getElementById("events");
+
+
+const eventCount =
+    document.getElementById("eventCount");
+
+
+
+/* ============================================================
+   EVENT TITLE
+   ============================================================ */
+
+function formatTitle(filename) {
+
+    return filename
+
+        .replace(/\.html$/i, "")
+
+        .replace(/[-_]+/g, " ")
+
+        .replace(/\s+/g, " ")
+
+        .trim()
+
+        .replace(
+            /\b\w/g,
+            letter => letter.toUpperCase()
+        );
+
+}
+
+
+
+/* ============================================================
+   DATE FORMAT
+   ============================================================ */
+
+function formatDate(dateString) {
+
+    if (!dateString) {
+
+        return "Date unavailable";
+
+    }
+
+
+    const date =
+        new Date(
+            dateString + "T00:00:00"
+        );
+
+
+    if (isNaN(date.getTime())) {
+
+        return "Date unavailable";
+
+    }
+
+
+    return date.toLocaleDateString(
+        "en-IN",
+        {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+
+/* ============================================================
+   READ DATE FROM EVENT HTML
+   ============================================================ */
+
+async function getEventDate(file) {
+
+    try {
+
+        const response =
+            await fetch(
+                file.download_url
+            );
+
+
+        if (!response.ok) {
+
+            return null;
+
+        }
+
+
+        const html =
+            await response.text();
+
+
+        const parser =
+            new DOMParser();
+
+
+        const document =
+            parser.parseFromString(
+                html,
+                "text/html"
+            );
+
+
+        /*
+         * Look for:
+
+         * <meta
+         *   name="event-date"
+         *   content="2026-08-27"
+         * >
+         */
+
+        const dateMeta =
+            document.querySelector(
+                'meta[name="event-date"]'
+            );
+
+
+        if (!dateMeta) {
+
+            return null;
+
+        }
+
+
+        return dateMeta.getAttribute(
+            "content"
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Date error:",
+            file.name,
+            error
+        );
+
+        return null;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   LOAD EVENTS
+   ============================================================ */
+
+async function loadEvents() {
+
+    try {
+
+        const response =
+            await fetch(apiURL);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `GitHub API returned ${response.status}`
+            );
+
+        }
+
+
+        const files =
+            await response.json();
+
+
+        /*
+         * Keep ONLY HTML files.
+         *
+         * index.html is excluded.
+         *
+         * photos/ is automatically ignored.
+         */
+
+        const eventFiles =
+            files.filter(
+                file =>
+                    file.type === "file" &&
+                    /\.html$/i.test(file.name) &&
+                    file.name.toLowerCase()
+                        !== "index.html"
+            );
+
+
+
+        /*
+         * Read dates
+         */
+
+        const events =
+            await Promise.all(
+
+                eventFiles.map(
+                    async file => {
+
+                        const date =
+                            await getEventDate(
+                                file
+                            );
+
+
+                        return {
+
+                            ...file,
+
+                            eventDate: date
+
+                        };
+
+                    }
+                )
+
+            );
+
+
+
+        /*
+         * Sort by event date
+         */
+
+        events.sort(
+            (a,b) => {
+
+                if (!a.eventDate)
+                    return 1;
+
+                if (!b.eventDate)
+                    return -1;
+
+
+                return (
+                    new Date(a.eventDate)
+                    -
+                    new Date(b.eventDate)
+                );
+
+            }
+        );
+
+
+
+        /* ==========================
+           EVENT COUNT
+        ========================== */
+
+        eventCount.textContent =
+            `${events.length} ${
+                events.length === 1
+                    ? "Story"
+                    : "Stories"
+            }`;
+
+
+
+        /* ==========================
+           EMPTY STATE
+        ========================== */
+
+        if (events.length === 0) {
+
+            eventsContainer.innerHTML = `
+
+                <div class="state">
+
+                    <strong>
+                        No stories yet
+                    </strong>
+
+                    New event pages added to
+                    this month will automatically
+                    appear here.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+
+        /* ==========================
+           CREATE EVENT CARDS
+        ========================== */
+
+        eventsContainer.innerHTML =
+
+            events.map(
+                (event,index) => {
+
+                    const title =
+                        formatTitle(
+                            event.name
+                        );
+
+
+                    const date =
+                        formatDate(
+                            event.eventDate
+                        );
+
+
+                    return `
+
+                        <a
+                            class="event-card"
+                            href="${encodeURI(event.name)}"
+                        >
+
+                            <div class="event-number">
+
+                                ${String(index + 1)
+                                    .padStart(2,"0")}
+
+                            </div>
+
+
+                            <div class="event-info">
+
+                                <div class="event-date">
+
+                                    ${date}
+
+                                </div>
+
+
+                                <div class="event-title">
+
+                                    ${title}
+
+                                </div>
+
+
+                                <div class="event-link">
+
+                                    Read Story →
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+                    `;
+
+                }
+            ).join("");
+
+    }
+
+
+    catch(error) {
+
+        console.error(error);
+
+
+        eventCount.textContent =
+            "Unavailable";
+
+
+        eventsContainer.innerHTML = `
+
+            <div class="state">
+
+                <strong>
+                    Couldn't load the stories
+                </strong>
+
+                Please check your internet
+                connection and try again.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ============================================================
+   START
+   ============================================================ */
+
+loadEvents();
+
+</script>
+
+
+</body>
+
+</html>
