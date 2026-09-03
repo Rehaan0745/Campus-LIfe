@@ -1,1266 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GITAM | Monthly Newsletter</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
-        rel="stylesheet">
-
-
-    <style>
-
-        /* =====================================================
-           GITAM CAMPUS LIFE — MONTHLY ARCHIVE
-           ===================================================== */
-
-        :root {
-            --teal: #017069;
-            --dark: #073f3c;
-            --cream: #f1e1ca;
-            --paper: #faf4ea;
-            --gold: #d9a441;
-            --coral: #d97955;
-            --muted: #6c7774;
-            --white: #ffffff;
-        }
-
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        body {
-            margin: 0;
-            color: var(--dark);
-            font-family: "DM Sans", sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 8% 5%,
-                    rgba(217, 164, 65, 0.18),
-                    transparent 24%
-                ),
-                radial-gradient(
-                    circle at 92% 15%,
-                    rgba(1, 112, 105, 0.12),
-                    transparent 25%
-                ),
-                var(--paper);
-        }
-
-
-        /* =====================================================
-           GENERAL
-           ===================================================== */
-
-        .wrap {
-            max-width: 1120px;
-            margin: auto;
-            padding: 0 24px;
-        }
-
-
-        /* =====================================================
-           HEADER
-           ===================================================== */
-
-        header {
-            padding: 22px 0;
-        }
-
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-        }
-
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            color: var(--dark);
-            text-decoration: none;
-
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-        }
-
-
-        /*
-           CSS GITAM-style logo mark.
-           This means the page does NOT depend on
-           another image file.
-        */
-
-        .logo {
-            width: 52px;
-            height: 52px;
-
-            border-radius: 50%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: var(--teal);
-            color: white;
-
-            font-family: "Manrope", sans-serif;
-            font-size: 25px;
-            font-weight: 800;
-
-            border: 4px solid rgba(255,255,255,0.75);
-
-            box-shadow:
-                0 8px 22px rgba(7, 63, 60, 0.12);
-        }
-
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-
-        .brand-title {
-            font-size: 15px;
-            letter-spacing: 0;
-        }
-
-
-        .brand-subtitle {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            color: var(--muted);
-        }
-
-
-        .back {
-            padding: 10px 16px;
-
-            border: 1px solid rgba(1, 112, 105, 0.15);
-            border-radius: 999px;
-
-            color: var(--dark);
-            text-decoration: none;
-
-            font-size: 13px;
-            font-weight: 700;
-
-            background: rgba(255,255,255,0.8);
-
-            transition: 0.2s ease;
-        }
-
-
-        .back:hover {
-            background: white;
-            transform: translateY(-2px);
-        }
-
-
-        /* =====================================================
-           HERO
-           ===================================================== */
-
-        .hero {
-            position: relative;
-
-            text-align: center;
-
-            padding: 68px 0 45px;
-        }
-
-
-        .eyebrow {
-            display: inline-block;
-
-            padding: 8px 13px;
-
-            border-radius: 999px;
-
-            background: rgba(217, 164, 65, 0.17);
-
-            color: #795a18;
-
-            font-size: 11px;
-            font-weight: 800;
-
-            letter-spacing: 0.13em;
-
-            text-transform: uppercase;
-        }
-
-
-        h1 {
-            margin: 17px 0 10px;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(45px, 7vw, 76px);
-
-            line-height: 0.98;
-
-            letter-spacing: -0.055em;
-
-            color: var(--dark);
-        }
-
-
-        .intro {
-            max-width: 650px;
-
-            margin: auto;
-
-            color: var(--muted);
-
-            line-height: 1.7;
-
-            font-size: 15px;
-        }
-
-
-        /* =====================================================
-           DIVIDER
-           ===================================================== */
-
-        .rule {
-            height: 1px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(1,112,105,0.22),
-                    transparent
-                );
-
-            margin-bottom: 32px;
-        }
-
-
-        /* =====================================================
-           SECTION HEADER
-           ===================================================== */
-
-        .status {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
-
-            margin-bottom: 17px;
-        }
-
-
-        .status h2 {
-            margin: 0;
-
-            font:
-                700 20px "Manrope",
-                sans-serif;
-        }
-
-
-        .count {
-            padding: 7px 11px;
-
-            border-radius: 999px;
-
-            background: rgba(1,112,105,0.09);
-
-            color: var(--teal);
-
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-
-        /* =====================================================
-           EVENT GRID
-           ===================================================== */
-
-        .events {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-
-            padding-bottom: 70px;
-        }
-
-
-        /* =====================================================
-           EVENT CARD
-           ===================================================== */
-
-        .card {
-            position: relative;
-
-            min-height: 230px;
-
-            padding: 25px;
-
-            display: flex;
-            flex-direction: column;
-
-            text-decoration: none;
-
-            color: inherit;
-
-            background:
-                rgba(255,255,255,0.88);
-
-            border:
-                1px solid rgba(1,112,105,0.10);
-
-            border-radius: 22px;
-
-            box-shadow:
-                0 16px 40px rgba(7,63,60,0.10);
-
-            overflow: hidden;
-
-            transition:
-                transform 0.22s ease,
-                box-shadow 0.22s ease,
-                border-color 0.22s ease;
-        }
-
-
-        .card::after {
-            content: "";
-
-            position: absolute;
-
-            right: -30px;
-            top: -30px;
-
-            width: 95px;
-            height: 95px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(217,164,65,0.14);
-        }
-
-
-        .card:hover {
-            transform: translateY(-6px);
-
-            border-color:
-                rgba(1,112,105,0.28);
-
-            box-shadow:
-                0 22px 48px rgba(7,63,60,0.15);
-        }
-
-
-        /* Event number */
-
-        .number {
-            color: var(--coral);
-
-            font-size: 12px;
-            font-weight: 800;
-
-            letter-spacing: 0.12em;
-        }
-
-
-        /* Event title */
-
-        .title {
-            margin: 28px 0 7px;
-
-            font:
-                700 23px/1.18 "Manrope",
-                sans-serif;
-        }
-
-
-        /* Event date */
-
-        .date {
-            color: var(--muted);
-
-            font-size: 13px;
-
-            font-weight: 600;
-
-            margin-bottom: auto;
-        }
-
-
-        /* Read story */
-
-        .open {
-            margin-top: 22px;
-
-            color: var(--teal);
-
-            font-size: 13px;
-            font-weight: 800;
-        }
-
-
-        /* =====================================================
-           EMPTY / ERROR
-           ===================================================== */
-
-        .empty,
-        .error {
-            grid-column: 1 / -1;
-
-            text-align: center;
-
-            padding: 42px;
-
-            border:
-                1px dashed rgba(1,112,105,0.25);
-
-            border-radius: 22px;
-
-            color: var(--muted);
-
-            background:
-                rgba(255,255,255,0.7);
-        }
-
-
-        .empty strong,
-        .error strong {
-            display: block;
-
-            color: var(--dark);
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 18px;
-
-            margin-bottom: 6px;
-        }
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        footer {
-            border-top:
-                1px solid rgba(1,112,105,0.12);
-
-            padding: 22px 0 32px;
-
-            text-align: center;
-
-            color: var(--muted);
-
-            font-size: 12px;
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-           ===================================================== */
-
-        @media (max-width: 800px) {
-
-            .events {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 560px) {
-
-            .wrap {
-                padding: 0 17px;
-            }
-
-
-            .hero {
-                padding: 50px 0 35px;
-            }
-
-
-            .events {
-                grid-template-columns: 1fr;
-            }
-
-
-            .brand-title {
-                font-size: 13px;
-            }
-
-
-            .brand-subtitle {
-                font-size: 8px;
-            }
-
-
-            .logo {
-                width: 45px;
-                height: 45px;
-            }
-
-
-            .back {
-                padding: 9px 12px;
-            }
-
-
-            h1 {
-                font-size: 50px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GITAM | Monthly Newsletter</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --teal:#017069;
+    --dark:#073f3c;
+    --cream:#f1e1ca;
+    --paper:#faf4ea;
+    --gold:#d9a441;
+    --coral:#d97955;
+    --muted:#6c7774;
+    --white:#fff;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    color:var(--dark);
+    font-family:'DM Sans',sans-serif;
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(217,164,65,.18),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(1,112,105,.12),
+            transparent 25%
+        ),
+        var(--paper);
+}
+
+.wrap{
+    max-width:1120px;
+    margin:auto;
+    padding:0 24px;
+}
+
+/* HEADER */
+
+header{
+    padding:22px 0;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--dark);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.08em;
+}
+
+/* GITAM LOGO */
+
+.logo{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ffffff;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(7,63,60,.12);
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+/* DASHBOARD BUTTON */
+
+.back{
+    padding:10px 16px;
+    border:1px solid rgba(1,112,105,.15);
+    border-radius:999px;
+    color:var(--dark);
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    background:rgba(255,255,255,.8);
+    transition:.2s;
+}
+
+.back:hover{
+    background:#fff;
+    transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:68px 0 45px;
+}
+
+.eyebrow{
+    display:inline-block;
+    padding:8px 13px;
+    border-radius:999px;
+    background:rgba(217,164,65,.17);
+    color:#795a18;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+}
+
+h1{
+    margin:17px 0 10px;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(45px,7vw,76px);
+    line-height:.98;
+    letter-spacing:-.055em;
+    color:var(--dark);
+}
+
+.intro{
+    max-width:650px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* DIVIDER */
+
+.rule{
+    height:1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(1,112,105,.22),
+            transparent
+        );
+    margin-bottom:32px;
+}
+
+/* STORIES HEADER */
+
+.status{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:17px;
+}
+
+.status h2{
+    margin:0;
+    font:700 20px Manrope,sans-serif;
+}
+
+.count{
+    padding:7px 11px;
+    border-radius:999px;
+    background:rgba(1,112,105,.09);
+    color:var(--teal);
+    font-size:12px;
+    font-weight:700;
+}
+
+/* EVENT GRID */
+
+.events{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding-bottom:70px;
+}
+
+/* EVENT CARD */
+
+.card{
+    position:relative;
+    min-height:235px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:inherit;
+    background:rgba(255,255,255,.88);
+    border:1px solid rgba(1,112,105,.1);
+    border-radius:22px;
+    box-shadow:0 16px 40px rgba(7,63,60,.1);
+    overflow:hidden;
+    transition:.22s;
+}
+
+.card:after{
+    content:'';
+    position:absolute;
+    right:-30px;
+    top:-30px;
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:rgba(217,164,65,.14);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(1,112,105,.28);
+    box-shadow:0 22px 48px rgba(7,63,60,.15);
+}
+
+.number{
+    color:var(--coral);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+/* EVENT DATE */
+
+.date{
+    margin-top:12px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+}
+
+/* EVENT TITLE */
+
+.title{
+    margin:30px 0 12px;
+    font:700 23px/1.18 Manrope,sans-serif;
+}
+
+/* READ STORY */
+
+.open{
+    margin-top:auto;
+    color:var(--teal);
+    font-size:13px;
+    font-weight:800;
+}
+
+/* STATES */
+
+.empty,
+.error{
+    grid-column:1/-1;
+    text-align:center;
+    padding:42px;
+    border:1px dashed rgba(1,112,105,.25);
+    border-radius:22px;
+    color:var(--muted);
+    background:rgba(255,255,255,.7);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(1,112,105,.12);
+    padding:22px 0 32px;
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* TABLET */
+
+@media(max-width:800px){
+
+    .events{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:560px){
+
+    .wrap{
+        padding:0 17px;
+    }
+
+    .hero{
+        padding:50px 0 35px;
+    }
+
+    .events{
+        grid-template-columns:1fr;
+    }
+
+    .brand{
+        font-size:11px;
+    }
+
+    .logo{
+        width:45px;
+        height:45px;
+    }
+
+    .back{
+        padding:9px 12px;
+    }
+
+}
+</style>
 </head>
-
 
 <body>
 
+<header>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+    <div class="wrap nav">
 
-    <header>
+        <!-- GITAM LOGO -->
+        <a class="brand" href="../index.html">
 
-        <div class="wrap nav">
-
-            <a class="brand" href="../index.html">
-
-                <div class="logo">
-                    G
-                </div>
-
-                <div class="brand-text">
-
-                    <div class="brand-title">
-                        GITAM Campus Life
-                    </div>
-
-                    <div class="brand-subtitle">
-                        DIGITAL NEWSLETTER
-                    </div>
-
-                </div>
-
-            </a>
-
-
-            <a class="back" href="../index.html">
-                ← Dashboard
-            </a>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         MAIN
-         ===================================================== -->
-
-    <main class="wrap">
-
-
-        <!-- HERO -->
-
-        <section class="hero">
-
-            <span class="eyebrow">
-                Monthly Edition
-            </span>
-
-
-            <!-- Month inserted automatically -->
-
-            <h1 id="monthTitle">
-                Loading...
-            </h1>
-
-
-            <p class="intro">
-                Explore the events, activities and stories
-                featured in this month's GITAM Campus Life
-                newsletter.
-            </p>
-
-        </section>
-
-
-
-        <div class="rule"></div>
-
-
-
-        <!-- SECTION HEADER -->
-
-        <div class="status">
-
-            <h2>
-                Events & Stories
-            </h2>
-
-
-            <span
-                class="count"
-                id="count">
-                Loading...
-            </span>
-
-        </div>
-
-
-
-        <!-- EVENTS -->
-
-        <section
-            class="events"
-            id="events">
-
-            <div class="empty">
-
-                Finding this month's stories...
-
+            <div class="logo">
+                <img src="../gitam-logo.png" alt="GITAM">
             </div>
 
-        </section>
+            <span>GITAM · CAMPUS CHRONICLE</span>
+
+        </a>
+
+        <!-- BACK TO DASHBOARD -->
+        <a class="back" href="../index.html">
+            ← Dashboard
+        </a>
+
+    </div>
+
+</header>
 
 
-    </main>
+<main class="wrap">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <span class="eyebrow">
+            Campus Newsletter
+        </span>
+
+        <h1 id="monthTitle">
+            Month
+        </h1>
+
+        <p class="intro">
+            Explore the events, initiatives and stories featured
+            in this month's GITAM campus newsletter.
+        </p>
+
+    </section>
 
 
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-        <strong>GITAM University</strong>
-        · Campus Newsletter Digital Archive
-
-        <br>
-
-        Built as a living repository for campus stories
-        and events.
-
-    </footer>
+    <div class="rule"></div>
 
 
+    <!-- STORIES HEADER -->
 
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
+    <div class="status">
 
-    <script>
+        <h2>
+            Stories &amp; Events
+        </h2>
+
+        <span class="count" id="count">
+            Loading…
+        </span>
+
+    </div>
 
 
-        /* =====================================================
-           1. DETECT REPOSITORY + MONTH AUTOMATICALLY
-           ===================================================== */
+    <!-- EVENTS WILL LOAD AUTOMATICALLY -->
 
-        const pathParts =
-            window.location.pathname
-                .split("/")
-                .filter(Boolean);
+    <section class="events" id="events">
+
+        <div class="empty">
+            Finding this month's stories…
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    GITAM · Campus Chronicle
+</footer>
+
+
+<script>
+
+/* =========================================================
+   DETECT CURRENT MONTH FOLDER
+   ========================================================= */
+
+const pathParts = window.location.pathname
+    .split('/')
+    .filter(Boolean);
+
+const owner = window.location.hostname.split('.')[0];
+
+const repo = pathParts[0];
+
+
+/*
+    Works for:
+
+    /Campus-LIfe/August/
+    /Campus-LIfe/August/index.html
+*/
+
+let monthFolder;
+
+const lastPart =
+    pathParts[pathParts.length - 1];
+
+if (
+    lastPart &&
+    lastPart.toLowerCase() === 'index.html'
+) {
+    monthFolder =
+        pathParts[pathParts.length - 2];
+} else {
+    monthFolder =
+        pathParts[pathParts.length - 1];
+}
+
+
+/* =========================================================
+   DISPLAY MONTH
+   ========================================================= */
+
+const monthTitle =
+    document.getElementById('monthTitle');
+
+monthTitle.textContent =
+    monthFolder || 'Month';
+
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const box =
+    document.getElementById('events');
+
+const count =
+    document.getElementById('count');
+
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function prettyName(filename){
+
+    return filename
+        .replace(/\.html$/i,'')
+        .replace(/[-_]+/g,' ')
+        .replace(/\b\w/g,c => c.toUpperCase());
+
+}
+
+
+function escapeHTML(text){
+
+    return text.replace(
+        /[&<>"']/g,
+        c => ({
+            '&':'&amp;',
+            '<':'&lt;',
+            '>':'&gt;',
+            '"':'&quot;',
+            "'":'&#039;'
+        }[c])
+    );
+
+}
+
+
+/* =========================================================
+   GET EVENT DATE FROM EVENT HTML
+   ========================================================= */
+
+async function getEventDate(file){
+
+    try{
+
+        const response =
+            await fetch(file.download_url);
+
+        if(!response.ok){
+            return null;
+        }
+
+        const html =
+            await response.text();
+
+        const parser =
+            new DOMParser();
+
+        const doc =
+            parser.parseFromString(
+                html,
+                'text/html'
+            );
 
 
         /*
-            Example:
+            Event HTML should contain:
 
-            https://rehaan0745.github.io/Campus-LIfe/August/
-
-            pathParts becomes:
-
-            ["Campus-LIfe", "August"]
-
-
-            If the browser gives:
-
-            ["Campus-LIfe", "August", "index.html"]
-
-            we still correctly detect "August".
+            <meta
+                name="event-date"
+                content="2026-08-27"
+            >
         */
 
-
-        const owner =
-            window.location.hostname
-                .split(".")[0];
-
-
-        const repo =
-            pathParts[0];
+        const dateMeta =
+            doc.querySelector(
+                'meta[name="event-date"]'
+            );
 
 
-        let monthFolder;
-
-
-        const lastPart =
-            pathParts[pathParts.length - 1];
-
-
-        if (
-            lastPart &&
-            lastPart.toLowerCase() === "index.html"
-        ) {
-
-            monthFolder =
-                pathParts[pathParts.length - 2];
-
-        } else {
-
-            monthFolder =
-                pathParts[pathParts.length - 1];
-
+        if(
+            !dateMeta ||
+            !dateMeta.content
+        ){
+            return null;
         }
 
 
-        monthFolder =
-            decodeURIComponent(monthFolder || "");
+        const date =
+            new Date(dateMeta.content);
 
 
-
-        /* =====================================================
-           2. CONVERT NUMERIC FOLDER NAMES IF NEEDED
-           =====================================================
-
-           This supports BOTH:
-
-           August/
-           September/
-
-           AND:
-
-           08/
-           09/
-
-           So you don't need to change this code later.
-        */
-
-        const monthNumbers = {
-
-            "01": "January",
-            "02": "February",
-            "03": "March",
-            "04": "April",
-            "05": "May",
-            "06": "June",
-            "07": "July",
-            "08": "August",
-            "09": "September",
-            "10": "October",
-            "11": "November",
-            "12": "December"
-
-        };
-
-
-        const displayMonth =
-            monthNumbers[monthFolder] ||
-            monthFolder;
-
-
-
-        /* Put month on page */
-
-        document.getElementById(
-            "monthTitle"
-        ).textContent =
-            displayMonth || "Month";
-
-
-
-        /* =====================================================
-           3. MANUAL EVENT DATES
-           =====================================================
-
-           THIS IS THE ONLY PART YOU MANUALLY EDIT.
-
-           Event filename  →  event date
-
-           Use:
-
-           YYYY-MM-DD
-
-           Example:
-
-           "Onam.html": "2026-08-27"
-        */
-
-
-        const eventDates = {
-
-
-            /* =========================
-               ADD YOUR EVENT DATES HERE
-               ========================= */
-
-
-            "Elevate.html": "2026-08-20",
-
-            "Esparanza.html": "2026-08-22",
-
-            "Onam.html": "2026-08-27"
-
-
-            /*
-               When you add another event:
-
-               "New_Event.html": "2026-08-29"
-
-            */
-
-        };
-
-
-
-        /* =====================================================
-           4. PAGE ELEMENTS
-           ===================================================== */
-
-        const eventsBox =
-            document.getElementById("events");
-
-
-        const countBox =
-            document.getElementById("count");
-
-
-
-        /* =====================================================
-           5. GITHUB API URL
-           ===================================================== */
-
-        const apiUrl =
-            `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(monthFolder)}`;
-
-
-
-        /* =====================================================
-           6. MAKE FILENAMES LOOK NICE
-           ===================================================== */
-
-        function prettyName(filename) {
-
-            return filename
-
-                .replace(
-                    /\.html$/i,
-                    ""
-                )
-
-                .replace(
-                    /[-_]+/g,
-                    " "
-                )
-
-                .replace(
-                    /\b\w/g,
-                    letter =>
-                        letter.toUpperCase()
-                );
-
+        if(isNaN(date)){
+            return null;
         }
 
 
+        return date;
 
-        /* =====================================================
-           7. ESCAPE HTML
-           ===================================================== */
+    }
 
-        function escapeHTML(text) {
+    catch(error){
 
-            return text.replace(
-                /[&<>"']/g,
+        console.error(
+            `Could not read date for ${file.name}`,
+            error
+        );
 
-                character => ({
+        return null;
 
-                    "&": "&amp;",
-                    "<": "&lt;",
-                    ">": "&gt;",
-                    '"': "&quot;",
-                    "'": "&#039;"
+    }
 
-                }[character])
+}
 
+
+/* =========================================================
+   FORMAT DATE
+   ========================================================= */
+
+function formatDate(date){
+
+    return date.toLocaleDateString(
+        'en-IN',
+        {
+            day:'numeric',
+            month:'long',
+            year:'numeric'
+        }
+    );
+
+}
+
+
+/* =========================================================
+   LOAD EVENTS
+   ========================================================= */
+
+async function load(){
+
+    try{
+
+        /*
+            Ask GitHub for everything
+            inside the current month folder.
+        */
+
+        const response =
+            await fetch(
+                `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(monthFolder)}`
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                `GitHub API error: ${response.status}`
             );
 
         }
 
 
+        const files =
+            await response.json();
 
-        /* =====================================================
-           8. FORMAT DATE
-           ===================================================== */
 
-        function formatDate(dateString) {
+        /*
+            Keep only HTML event files.
 
-            if (!dateString) {
+            Ignore:
+            - index.html
+            - folders
+            - photos/
+        */
 
-                return "Date not added";
+        const events =
+            files.filter(file =>
+                file.type === 'file' &&
+                /\.html$/i.test(file.name) &&
+                file.name.toLowerCase() !== 'index.html'
+            );
 
+
+        if(!events.length){
+
+            box.innerHTML = `
+                <div class="empty">
+                    No event stories have been added
+                    to this month yet.
+                </div>
+            `;
+
+            count.textContent =
+                '0 stories';
+
+            return;
+
+        }
+
+
+        /*
+            Read the event-date metadata
+            from every event HTML.
+        */
+
+        const datedEvents =
+            await Promise.all(
+                events.map(async file => {
+
+                    const date =
+                        await getEventDate(file);
+
+                    return {
+                        file,
+                        date
+                    };
+
+                })
+            );
+
+
+        /*
+            Sort chronologically.
+
+            Events without a date
+            go to the bottom.
+        */
+
+        datedEvents.sort((a,b) => {
+
+            if(!a.date && !b.date){
+                return a.file.name
+                    .localeCompare(b.file.name);
             }
 
-
-            /*
-                Add time manually so JavaScript doesn't
-                shift the date because of timezone conversion.
-            */
-
-            const parts =
-                dateString.split("-");
-
-
-            if (parts.length !== 3) {
-
-                return dateString;
-
+            if(!a.date){
+                return 1;
             }
 
+            if(!b.date){
+                return -1;
+            }
 
-            const year =
-                Number(parts[0]);
+            return a.date - b.date;
+
+        });
 
 
-            const month =
-                Number(parts[1]) - 1;
+        /* =================================================
+           UPDATE COUNT
+           ================================================= */
+
+        count.textContent =
+            `${datedEvents.length} ${
+                datedEvents.length === 1
+                    ? 'story'
+                    : 'stories'
+            }`;
 
 
-            const day =
-                Number(parts[2]);
+        /* =================================================
+           BUILD EVENT CARDS
+           ================================================= */
 
+        box.innerHTML = '';
+
+
+        datedEvents.forEach((item,index) => {
+
+            const file =
+                item.file;
 
             const date =
-                new Date(
-                    year,
-                    month,
-                    day
-                );
+                item.date;
 
 
-            return date.toLocaleDateString(
-                "en-IN",
-                {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric"
-                }
-            );
+            const card =
+                document.createElement('a');
 
-        }
+            card.className =
+                'card';
 
+            card.href =
+                file.name;
 
 
-        /* =====================================================
-           9. LOAD EVENTS
-           ===================================================== */
+            const dateHTML =
+                date
+                    ? `<div class="date">
+                         ${formatDate(date)}
+                       </div>`
+                    : `<div class="date">
+                         Date unavailable
+                       </div>`;
 
-        async function loadEvents() {
 
+            card.innerHTML = `
 
-            try {
+                <div class="number">
+                    ${String(index + 1).padStart(2,'0')}
+                </div>
 
+                ${dateHTML}
 
-                /* ---------------------------------------------
-                   Get files from current month folder
-                   --------------------------------------------- */
+                <div class="title">
+                    ${escapeHTML(
+                        prettyName(file.name)
+                    )}
+                </div>
 
-                const response =
-                    await fetch(apiUrl);
+                <div class="open">
+                    Read story →
+                </div>
 
+            `;
 
-                if (!response.ok) {
 
-                    throw new Error(
-                        `GitHub API error: ${response.status}`
-                    );
+            box.appendChild(card);
 
-                }
+        });
 
+    }
 
-                const files =
-                    await response.json();
 
+    catch(error){
 
+        console.error(error);
 
-                /* ---------------------------------------------
-                   Find ONLY event HTML files
-                   --------------------------------------------- */
 
-                const eventFiles =
-                    files.filter(file =>
+        count.textContent =
+            'Unavailable';
 
-                        file.type === "file" &&
 
-                        /\.html$/i.test(
-                            file.name
-                        ) &&
+        box.innerHTML = `
 
-                        file.name.toLowerCase()
-                            !== "index.html"
+            <div class="error">
 
-                    );
+                Unable to load the stories automatically.
 
+                <br><br>
 
+                Make sure this GitHub repository is
+                public and GitHub Pages is enabled.
 
-                /* ---------------------------------------------
-                   No events
-                   --------------------------------------------- */
+            </div>
 
-                if (eventFiles.length === 0) {
+        `;
 
+    }
 
-                    countBox.textContent =
-                        "0 stories";
+}
 
 
-                    eventsBox.innerHTML = `
+/* =========================================================
+   START
+   ========================================================= */
 
-                        <div class="empty">
+load();
 
-                            <strong>
-                                No stories yet
-                            </strong>
-
-                            No event HTML files have
-                            been added to this month.
-
-                        </div>
-
-                    `;
-
-
-                    return;
-
-                }
-
-
-
-                /* =================================================
-                   10. SORT EVENTS BY DATE
-                   ================================================= */
-
-                eventFiles.sort(
-                    (a, b) => {
-
-                        const dateA =
-                            eventDates[a.name];
-
-
-                        const dateB =
-                            eventDates[b.name];
-
-
-                        /*
-                           Events with dates come first.
-                        */
-
-                        if (!dateA && !dateB) {
-
-                            return a.name.localeCompare(
-                                b.name
-                            );
-
-                        }
-
-
-                        if (!dateA) {
-
-                            return 1;
-
-                        }
-
-
-                        if (!dateB) {
-
-                            return -1;
-
-                        }
-
-
-                        return dateA.localeCompare(
-                            dateB
-                        );
-
-                    }
-                );
-
-
-
-                /* =================================================
-                   11. UPDATE EVENT COUNT
-                   ================================================= */
-
-                countBox.textContent =
-                    `${eventFiles.length} ${
-                        eventFiles.length === 1
-                            ? "story"
-                            : "stories"
-                    }`;
-
-
-
-                /* =================================================
-                   12. GENERATE EVENT CARDS
-                   ================================================= */
-
-                eventsBox.innerHTML = "";
-
-
-                eventFiles.forEach(
-                    (file, index) => {
-
-
-                        const title =
-                            prettyName(
-                                file.name
-                            );
-
-
-                        const date =
-                            eventDates[
-                                file.name
-                            ] || null;
-
-
-                        const card =
-                            document.createElement(
-                                "a"
-                            );
-
-
-                        card.className =
-                            "card";
-
-
-                        card.href =
-                            file.name;
-
-
-
-                        card.innerHTML = `
-
-                            <div class="number">
-
-                                ${String(index + 1)
-                                    .padStart(2, "0")}
-
-                            </div>
-
-
-                            <div class="title">
-
-                                ${escapeHTML(title)}
-
-                            </div>
-
-
-                            <div class="date">
-
-                                ${formatDate(date)}
-
-                            </div>
-
-
-                            <div class="open">
-
-                                Read story →
-
-                            </div>
-
-                        `;
-
-
-                        eventsBox.appendChild(
-                            card
-                        );
-
-                    }
-                );
-
-
-            }
-
-
-            /* =================================================
-               13. ERROR HANDLING
-               ================================================= */
-
-            catch (error) {
-
-
-                console.error(
-                    "Newsletter error:",
-                    error
-                );
-
-
-                countBox.textContent =
-                    "Unavailable";
-
-
-                eventsBox.innerHTML = `
-
-                    <div class="error">
-
-                        <strong>
-                            Couldn't load the stories
-                        </strong>
-
-                        Please check that the
-                        repository is public and
-                        GitHub Pages is enabled.
-
-                    </div>
-
-                `;
-
-            }
-
-        }
-
-
-
-        /* =====================================================
-           14. START
-           ===================================================== */
-
-        loadEvents();
-
-
-    </script>
-
+</script>
 
 </body>
-
 </html>
