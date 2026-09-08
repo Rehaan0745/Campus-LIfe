@@ -38,7 +38,7 @@ body{
     color:var(--text);
 }
 
-/* NAVBAR */
+
 
 .navbar{
     background:var(--white);
@@ -88,7 +88,7 @@ body{
     color:var(--muted);
 }
 
-/* ADD BUTTON */
+
 
 .add-month-btn{
     border:none;
@@ -116,7 +116,7 @@ body{
     line-height:0;
 }
 
-/* HERO */
+
 
 .hero{
     max-width:1200px;
@@ -149,7 +149,7 @@ body{
     line-height:1.7;
 }
 
-/* MONTHS */
+
 
 .container{
     max-width:1200px;
@@ -240,7 +240,7 @@ body{
     font-weight:bold;
 }
 
-/* EMPTY */
+
 
 .empty{
     background:white;
@@ -251,7 +251,7 @@ body{
     color:var(--muted);
 }
 
-/* MODAL */
+
 
 .modal-overlay{
     position:fixed;
@@ -606,9 +606,7 @@ footer{
 
 <script>
 
-/* =========================================================
-   GITHUB CONFIG
-========================================================= */
+
 
 const OWNER = "Rehaan0745";
 const REPO = "Campus-LIfe";
@@ -618,9 +616,7 @@ const monthGrid = document.getElementById("monthGrid");
 const statusText = document.getElementById("status");
 
 
-/* =========================================================
-   MONTH ORDER
-========================================================= */
+
 
 const monthOrder = {
     january:1,
@@ -638,9 +634,7 @@ const monthOrder = {
 };
 
 
-/* =========================================================
-   LOAD MONTHS AUTOMATICALLY
-========================================================= */
+
 
 async function loadMonths(){
 
@@ -772,16 +766,14 @@ async function loadMonths(){
 }
 
 
-/* =========================================================
-   COUNT EVENTS
-========================================================= */
+
 
 async function getEventCount(month){
 
     try{
 
         const url =
-            `https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(month)}?ref=${BRANCH}`;
+            `https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(month)}?ref=${BRANCH}&_=${Date.now()}`;
 
         const response =
             await fetch(url);
@@ -810,9 +802,7 @@ async function getEventCount(month){
 }
 
 
-/* =========================================================
-   MONTH MODAL
-========================================================= */
+
 
 function openMonthModal(){
 
@@ -879,9 +869,7 @@ function generateMonth(){
 }
 
 
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
+
 
 function escapeHTML(value){
 
@@ -895,9 +883,7 @@ function escapeHTML(value){
 }
 
 
-/* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
-========================================================= */
+
 
 document.getElementById("monthModal")
     .addEventListener("click", function(e){
@@ -911,11 +897,9 @@ document.getElementById("monthModal")
     });
 
 
-/* =========================================================
-   START
-========================================================= */
 
-loadMonths();
+
+window.addEventListener('DOMContentLoaded', loadMonths);
 
 </script>
 
