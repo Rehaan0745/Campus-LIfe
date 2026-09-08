@@ -1,618 +1,909 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GITAM | Monthly Newsletter</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Campus Life Archive</title>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
 
 <style>
-:root{
+
+:root {
     --teal:#017069;
-    --dark:#073f3c;
-    --cream:#f1e1ca;
-    --paper:#faf4ea;
-    --gold:#d9a441;
-    --coral:#d97955;
-    --muted:#6c7774;
-    --white:#fff;
+    --dark-teal:#005B56;
+    --deep:#073f3c;
+
+    --cream:#F1E1CA;
+    --paper:#FAF4EA;
+
+    --gold:#D9A441;
+    --coral:#D97955;
+
+    --white:#FFFFFF;
+
+    --text:#173b38;
+    --muted:#71817d;
+
+    --border:rgba(7,63,60,.12);
 }
 
-*{
+* {
     box-sizing:border-box;
 }
 
-body{
+body {
     margin:0;
-    color:var(--dark);
-    font-family:'DM Sans',sans-serif;
+
     background:
         radial-gradient(
-            circle at 8% 5%,
-            rgba(217,164,65,.18),
-            transparent 24%
-        ),
-        radial-gradient(
-            circle at 92% 15%,
-            rgba(1,112,105,.12),
-            transparent 25%
+            circle at top right,
+            rgba(217,164,65,.10),
+            transparent 30%
         ),
         var(--paper);
+
+    color:var(--text);
+
+    font-family:"DM Sans",sans-serif;
 }
 
-.wrap{
-    max-width:1120px;
-    margin:auto;
-    padding:0 24px;
-}
 
-/* HEADER */
+/* NAV */
 
-header{
-    padding:22px 0;
-}
+.navbar {
 
-.nav{
+    height:76px;
+
+    padding:0 6vw;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    gap:18px;
+
+    background:rgba(250,244,234,.95);
+
+    border-bottom:1px solid var(--border);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:20;
+
+    backdrop-filter:blur(14px);
+
 }
 
-.brand{
+.brand {
+
     display:flex;
+
     align-items:center;
-    gap:12px;
-    color:var(--dark);
-    text-decoration:none;
-    font-size:13px;
-    font-weight:800;
-    letter-spacing:.08em;
+
+    gap:13px;
+
 }
 
-/* GITAM LOGO */
+.logo {
 
-.logo{
     width:52px;
+
     height:52px;
+
     border-radius:50%;
+
+    background:white;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    background:#ffffff;
+
     overflow:hidden;
-    box-shadow:0 8px 22px rgba(7,63,60,.12);
+
+    box-shadow:
+        0 8px 22px rgba(7,63,60,.12);
+
 }
 
-.logo img{
+.logo img {
+
     width:100%;
+
     height:100%;
+
     object-fit:contain;
-    display:block;
+
 }
 
-/* DASHBOARD BUTTON */
+.brand-title {
 
-.back{
-    padding:10px 16px;
-    border:1px solid rgba(1,112,105,.15);
-    border-radius:999px;
-    color:var(--dark);
+    font-family:"Manrope",sans-serif;
+
+    font-weight:800;
+
+    color:var(--deep);
+
+}
+
+.back {
+
+    color:var(--teal);
+
     text-decoration:none;
+
     font-size:13px;
+
     font-weight:700;
-    background:rgba(255,255,255,.8);
-    transition:.2s;
+
 }
 
-.back:hover{
-    background:#fff;
-    transform:translateY(-2px);
-}
 
 /* HERO */
 
-.hero{
-    text-align:center;
-    padding:68px 0 45px;
-}
+.hero {
 
-.eyebrow{
-    display:inline-block;
-    padding:8px 13px;
-    border-radius:999px;
-    background:rgba(217,164,65,.17);
-    color:#795a18;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:.13em;
-    text-transform:uppercase;
-}
+    max-width:1200px;
 
-h1{
-    margin:17px 0 10px;
-    font-family:Manrope,sans-serif;
-    font-size:clamp(45px,7vw,76px);
-    line-height:.98;
-    letter-spacing:-.055em;
-    color:var(--dark);
-}
-
-.intro{
-    max-width:650px;
     margin:auto;
-    color:var(--muted);
-    line-height:1.7;
-    font-size:15px;
-}
 
-/* DIVIDER */
+    padding:
+        70px 6vw
+        45px;
 
-.rule{
-    height:1px;
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(1,112,105,.22),
-            transparent
-        );
-    margin-bottom:32px;
-}
-
-/* STORIES HEADER */
-
-.status{
     display:flex;
+
+    align-items:flex-end;
+
     justify-content:space-between;
-    align-items:center;
-    margin-bottom:17px;
+
+    gap:25px;
+
 }
 
-.status h2{
-    margin:0;
-    font:700 20px Manrope,sans-serif;
-}
+.eyebrow {
 
-.count{
-    padding:7px 11px;
-    border-radius:999px;
-    background:rgba(1,112,105,.09);
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:11px;
+
+    font-weight:800;
+
     color:var(--teal);
-    font-size:12px;
+
+    margin-bottom:12px;
+
+}
+
+h1 {
+
+    margin:0;
+
+    font-family:"Manrope",sans-serif;
+
+    color:var(--deep);
+
+    font-size:
+        clamp(42px,7vw,70px);
+
+    line-height:.95;
+
+    letter-spacing:-3px;
+
+}
+
+.subtitle {
+
+    margin-top:16px;
+
+    color:var(--muted);
+
+}
+
+
+/* ADD EVENT */
+
+.add-event {
+
+    border:none;
+
+    background:var(--teal);
+
+    color:white;
+
+    padding:13px 18px;
+
+    border-radius:13px;
+
+    font-family:inherit;
+
     font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    gap:8px;
+
+    align-items:center;
+
 }
 
-/* EVENT GRID */
+.add-event:hover {
 
-.events{
+    background:var(--dark-teal);
+
+}
+
+.plus {
+
+    font-size:19px;
+
+}
+
+
+/* CONTENT */
+
+.content {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        10px 6vw
+        80px;
+
+}
+
+.events {
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px,1fr)
+        );
+
     gap:20px;
-    padding-bottom:70px;
+
 }
+
 
 /* EVENT CARD */
 
-.card{
-    position:relative;
-    min-height:235px;
-    padding:25px;
+.event-card {
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:27px;
+
+    min-height:220px;
+
+    box-shadow:
+        0 15px 40px rgba(7,63,60,.08);
+
     display:flex;
+
     flex-direction:column;
-    text-decoration:none;
-    color:inherit;
-    background:rgba(255,255,255,.88);
-    border:1px solid rgba(1,112,105,.1);
-    border-radius:22px;
-    box-shadow:0 16px 40px rgba(7,63,60,.1);
-    overflow:hidden;
-    transition:.22s;
+
+    transition:.25s ease;
+
 }
 
-.card:after{
-    content:'';
-    position:absolute;
-    right:-30px;
-    top:-30px;
-    width:95px;
-    height:95px;
-    border-radius:50%;
-    background:rgba(217,164,65,.14);
+.event-card:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 22px 50px rgba(7,63,60,.14);
+
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(1,112,105,.28);
-    box-shadow:0 22px 48px rgba(7,63,60,.15);
-}
+.event-date {
 
-.number{
     color:var(--coral);
-    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.2px;
+
+    font-size:11px;
+
     font-weight:800;
-    letter-spacing:.12em;
+
 }
 
-/* EVENT DATE */
+.event-title {
 
-.date{
-    margin-top:12px;
-    color:var(--muted);
-    font-size:12px;
-    font-weight:600;
+    margin-top:13px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:23px;
+
+    font-weight:800;
+
+    color:var(--deep);
+
 }
 
-/* EVENT TITLE */
+.read-story {
 
-.title{
-    margin:30px 0 12px;
-    font:700 23px/1.18 Manrope,sans-serif;
-}
-
-/* READ STORY */
-
-.open{
     margin-top:auto;
+
+    padding-top:30px;
+
     color:var(--teal);
-    font-size:13px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
     font-weight:800;
+
 }
 
-/* STATES */
+.read-story:hover {
 
-.empty,
-.error{
-    grid-column:1/-1;
+    text-decoration:underline;
+
+}
+
+
+/* LOADING */
+
+.loading {
+
     text-align:center;
-    padding:42px;
-    border:1px dashed rgba(1,112,105,.25);
-    border-radius:22px;
+
+    padding:50px 0;
+
     color:var(--muted);
-    background:rgba(255,255,255,.7);
+
 }
 
-/* FOOTER */
 
-footer{
-    border-top:1px solid rgba(1,112,105,.12);
-    padding:22px 0 32px;
-    text-align:center;
+/* MODAL */
+
+.modal-overlay {
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(7,63,60,.45);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:100;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.modal-overlay.active {
+
+    display:flex;
+
+}
+
+.modal {
+
+    width:min(470px,100%);
+
+    background:var(--paper);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.2);
+
+}
+
+.modal-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.modal-title {
+
+    margin:0;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:24px;
+
+    color:var(--deep);
+
+}
+
+.modal-description {
+
+    margin:7px 0 0;
+
+    font-size:13px;
+
+    line-height:1.5;
+
     color:var(--muted);
-    font-size:12px;
-}
-
-/* TABLET */
-
-@media(max-width:800px){
-
-    .events{
-        grid-template-columns:repeat(2,1fr);
-    }
 
 }
 
-/* MOBILE */
+.close-btn {
 
-@media(max-width:560px){
+    border:none;
 
-    .wrap{
-        padding:0 17px;
-    }
+    width:34px;
 
-    .hero{
-        padding:50px 0 35px;
-    }
+    height:34px;
 
-    .events{
-        grid-template-columns:1fr;
-    }
+    border-radius:50%;
 
-    .brand{
-        font-size:11px;
-    }
+    background:white;
 
-    .logo{
-        width:45px;
-        height:45px;
-    }
+    font-size:20px;
 
-    .back{
-        padding:9px 12px;
-    }
+    cursor:pointer;
 
 }
+
+.form-group {
+
+    margin-bottom:18px;
+
+}
+
+label {
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+input {
+
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:13px;
+
+    background:white;
+
+    font-family:inherit;
+
+    outline:none;
+
+}
+
+input:focus {
+
+    border-color:var(--teal);
+
+    box-shadow:
+        0 0 0 3px rgba(1,112,105,.1);
+
+}
+
+.actions {
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+.cancel,
+.submit {
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    font-family:inherit;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+.cancel {
+
+    background:white;
+
+    border:1px solid var(--border);
+
+}
+
+.submit {
+
+    background:var(--teal);
+
+    color:white;
+
+}
+
+.status {
+
+    display:none;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    margin-top:14px;
+
+    font-size:13px;
+
+}
+
+.status.show {
+
+    display:block;
+
+}
+
+.status.success {
+
+    background:#e4f5ee;
+
+    color:#17624d;
+
+}
+
+.status.error {
+
+    background:#fbe8e5;
+
+    color:#8c3027;
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<header>
 
-    <div class="wrap nav">
+<!-- NAVBAR -->
 
-        <!-- GITAM LOGO -->
-        <a class="brand" href="../index.html">
+<nav class="navbar">
 
-            <div class="logo">
-                <img src="../gitam-logo.png" alt="GITAM">
-            </div>
+    <div class="brand">
 
-            <span>GITAM · CAMPUS CHRONICLE</span>
+        <div class="logo">
 
-        </a>
+            <img
+                src="../gitam-logo.png"
+                alt="GITAM"
+            >
 
-        <!-- BACK TO DASHBOARD -->
-        <a class="back" href="../index.html">
-            ← Dashboard
-        </a>
-
-    </div>
-
-</header>
-
-
-<main class="wrap">
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <span class="eyebrow">
-            Campus Newsletter
-        </span>
-
-        <h1 id="monthTitle">
-            Month
-        </h1>
-
-        <p class="intro">
-            Explore the events, initiatives and stories featured
-            in this month's GITAM campus newsletter.
-        </p>
-
-    </section>
-
-
-    <div class="rule"></div>
-
-
-    <!-- STORIES HEADER -->
-
-    <div class="status">
-
-        <h2>
-            Stories &amp; Events
-        </h2>
-
-        <span class="count" id="count">
-            Loading…
-        </span>
-
-    </div>
-
-
-    <!-- EVENTS WILL LOAD AUTOMATICALLY -->
-
-    <section class="events" id="events">
-
-        <div class="empty">
-            Finding this month's stories…
         </div>
 
-    </section>
+        <div class="brand-title">
+            Campus Life
+        </div>
+
+    </div>
+
+
+    <a
+        class="back"
+        href="../index.html"
+    >
+        ← All Months
+    </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div>
+
+        <div class="eyebrow">
+            Campus Life Archive
+        </div>
+
+        <h1 id="monthTitle">
+            Loading...
+        </h1>
+
+        <div
+            class="subtitle"
+            id="monthSubtitle"
+        >
+            Stories and events from GITAM
+        </div>
+
+    </div>
+
+
+    <button
+        class="add-event"
+        onclick="openEventModal()"
+    >
+
+        <span class="plus">
+            ＋
+        </span>
+
+        Add Event
+
+    </button>
+
+</section>
+
+
+<!-- EVENTS -->
+
+<main class="content">
+
+    <div
+        id="events"
+        class="events"
+    >
+
+        <div class="loading">
+            Loading events...
+        </div>
+
+    </div>
 
 </main>
 
 
-<footer>
-    GITAM · Campus Chronicle
-</footer>
+<!-- MODAL -->
+
+<div
+    id="eventModal"
+    class="modal-overlay"
+    onclick="closeOutside(event)"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h3 class="modal-title">
+                    Add Event
+                </h3>
+
+                <p class="modal-description">
+                    Create a new event page inside
+                    this month.
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                onclick="closeEventModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Event name
+            </label>
+
+            <input
+                id="eventName"
+                type="text"
+                placeholder="AI & Robotics Workshop"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Event date
+            </label>
+
+            <input
+                id="eventDate"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                GitHub Personal Access Token
+            </label>
+
+            <input
+                id="eventToken"
+                type="password"
+                placeholder="github_pat_..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div
+            id="eventStatus"
+            class="status"
+        ></div>
+
+
+        <div class="actions">
+
+            <button
+                class="cancel"
+                onclick="closeEventModal()"
+            >
+                Cancel
+            </button>
+
+            <button
+                id="eventSubmit"
+                class="submit"
+                onclick="createEvent()"
+            >
+                Create Event
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 <script>
 
+
 /* =========================================================
-   DETECT CURRENT MONTH FOLDER
-   ========================================================= */
+   AUTOMATICALLY DETECT REPOSITORY + MONTH
+========================================================= */
 
-const pathParts = window.location.pathname
-    .split('/')
-    .filter(Boolean);
-
-const owner = window.location.hostname.split('.')[0];
-
-const repo = pathParts[0];
+const pathParts =
+    window.location.pathname
+        .split("/")
+        .filter(Boolean);
 
 
-/*
-    Works for:
+const owner =
+    window.location.hostname
+        .split(".")[0];
 
-    /Campus-LIfe/August/
-    /Campus-LIfe/August/index.html
-*/
+
+const repo =
+    pathParts[0];
+
 
 let monthFolder;
+
 
 const lastPart =
     pathParts[pathParts.length - 1];
 
+
 if (
     lastPart &&
-    lastPart.toLowerCase() === 'index.html'
+    lastPart.toLowerCase() === "index.html"
 ) {
+
     monthFolder =
         pathParts[pathParts.length - 2];
-} else {
+
+}
+else {
+
     monthFolder =
         pathParts[pathParts.length - 1];
-}
-
-
-/* =========================================================
-   DISPLAY MONTH
-   ========================================================= */
-
-const monthTitle =
-    document.getElementById('monthTitle');
-
-monthTitle.textContent =
-    monthFolder || 'Month';
-
-
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
-
-const box =
-    document.getElementById('events');
-
-const count =
-    document.getElementById('count');
-
-
-/* =========================================================
-   HELPERS
-   ========================================================= */
-
-function prettyName(filename){
-
-    return filename
-        .replace(/\.html$/i,'')
-        .replace(/[-_]+/g,' ')
-        .replace(/\b\w/g,c => c.toUpperCase());
-
-}
-
-
-function escapeHTML(text){
-
-    return text.replace(
-        /[&<>"']/g,
-        c => ({
-            '&':'&amp;',
-            '<':'&lt;',
-            '>':'&gt;',
-            '"':'&quot;',
-            "'":'&#039;'
-        }[c])
-    );
 
 }
 
 
 /* =========================================================
-   GET EVENT DATE FROM EVENT HTML
-   ========================================================= */
+   MONTH TITLE
+========================================================= */
 
-async function getEventDate(file){
-
-    try{
-
-        const response =
-            await fetch(file.download_url);
-
-        if(!response.ok){
-            return null;
-        }
-
-        const html =
-            await response.text();
-
-        const parser =
-            new DOMParser();
-
-        const doc =
-            parser.parseFromString(
-                html,
-                'text/html'
-            );
+document.getElementById(
+    "monthTitle"
+).textContent = monthFolder;
 
 
-        /*
-            Event HTML should contain:
-
-            <meta
-                name="event-date"
-                content="2026-08-27"
-            >
-        */
-
-        const dateMeta =
-            doc.querySelector(
-                'meta[name="event-date"]'
-            );
-
-
-        if(
-            !dateMeta ||
-            !dateMeta.content
-        ){
-            return null;
-        }
-
-
-        const date =
-            new Date(dateMeta.content);
-
-
-        if(isNaN(date)){
-            return null;
-        }
-
-
-        return date;
-
-    }
-
-    catch(error){
-
-        console.error(
-            `Could not read date for ${file.name}`,
-            error
-        );
-
-        return null;
-
-    }
-
-}
-
-
-/* =========================================================
-   FORMAT DATE
-   ========================================================= */
-
-function formatDate(date){
-
-    return date.toLocaleDateString(
-        'en-IN',
-        {
-            day:'numeric',
-            month:'long',
-            year:'numeric'
-        }
-    );
-
-}
+document.getElementById(
+    "monthSubtitle"
+).textContent =
+    "Stories and events from GITAM";
 
 
 /* =========================================================
    LOAD EVENTS
-   ========================================================= */
+========================================================= */
 
-async function load(){
+async function loadEvents() {
 
-    try{
+    const container =
+        document.getElementById("events");
 
-        /*
-            Ask GitHub for everything
-            inside the current month folder.
-        */
+
+    try {
 
         const response =
             await fetch(
@@ -620,10 +911,10 @@ async function load(){
             );
 
 
-        if(!response.ok){
+        if (!response.ok) {
 
             throw new Error(
-                `GitHub API error: ${response.status}`
+                "Unable to load events."
             );
 
         }
@@ -633,186 +924,164 @@ async function load(){
             await response.json();
 
 
-        /*
-            Keep only HTML event files.
-
-            Ignore:
-            - index.html
-            - folders
-            - photos/
-        */
-
-        const events =
+        const eventFiles =
             files.filter(file =>
-                file.type === 'file' &&
-                /\.html$/i.test(file.name) &&
-                file.name.toLowerCase() !== 'index.html'
+
+                file.type === "file" &&
+
+                file.name
+                    .toLowerCase()
+                    .endsWith(".html") &&
+
+                file.name
+                    .toLowerCase() !== "index.html"
+
             );
 
 
-        if(!events.length){
+        if (!eventFiles.length) {
 
-            box.innerHTML = `
-                <div class="empty">
-                    No event stories have been added
-                    to this month yet.
+            container.innerHTML = `
+                <div class="loading">
+                    No events added yet.
                 </div>
             `;
-
-            count.textContent =
-                '0 stories';
 
             return;
 
         }
 
 
-        /*
-            Read the event-date metadata
-            from every event HTML.
-        */
-
-        const datedEvents =
-            await Promise.all(
-                events.map(async file => {
-
-                    const date =
-                        await getEventDate(file);
-
-                    return {
-                        file,
-                        date
-                    };
-
-                })
-            );
+        const events = [];
 
 
-        /*
-            Sort chronologically.
+        for (
+            const file of eventFiles
+        ) {
 
-            Events without a date
-            go to the bottom.
-        */
+            let eventDate = null;
 
-        datedEvents.sort((a,b) => {
 
-            if(!a.date && !b.date){
-                return a.file.name
-                    .localeCompare(b.file.name);
+            try {
+
+                const html =
+                    await fetch(
+                        file.download_url
+                    ).then(
+                        r => r.text()
+                    );
+
+
+                const doc =
+                    new DOMParser()
+                        .parseFromString(
+                            html,
+                            "text/html"
+                        );
+
+
+                const meta =
+                    doc.querySelector(
+                        'meta[name="event-date"]'
+                    );
+
+
+                if (meta) {
+
+                    eventDate =
+                        meta.content;
+
+                }
+
+            }
+            catch(error) {
+
+                console.warn(
+                    file.name,
+                    error
+                );
+
             }
 
-            if(!a.date){
-                return 1;
-            }
 
-            if(!b.date){
-                return -1;
-            }
+            events.push({
+                file,
+                eventDate
+            });
 
-            return a.date - b.date;
+        }
+
+
+        events.sort((a,b) => {
+
+            if (!a.eventDate) return 1;
+
+            if (!b.eventDate) return -1;
+
+            return new Date(a.eventDate)
+                - new Date(b.eventDate);
 
         });
 
 
-        /* =================================================
-           UPDATE COUNT
-           ================================================= */
-
-        count.textContent =
-            `${datedEvents.length} ${
-                datedEvents.length === 1
-                    ? 'story'
-                    : 'stories'
-            }`;
+        container.innerHTML = "";
 
 
-        /* =================================================
-           BUILD EVENT CARDS
-           ================================================= */
-
-        box.innerHTML = '';
-
-
-        datedEvents.forEach((item,index) => {
-
-            const file =
-                item.file;
-
-            const date =
-                item.date;
-
+        events.forEach(event => {
 
             const card =
-                document.createElement('a');
+                document.createElement(
+                    "article"
+                );
+
 
             card.className =
-                'card';
-
-            card.href =
-                file.name;
-
-
-            const dateHTML =
-                date
-                    ? `<div class="date">
-                         ${formatDate(date)}
-                       </div>`
-                    : `<div class="date">
-                         Date unavailable
-                       </div>`;
+                "event-card";
 
 
             card.innerHTML = `
 
-                <div class="number">
-                    ${String(index + 1).padStart(2,'0')}
+                <div class="event-date">
+                    ${
+                        event.eventDate
+                            ? formatDate(
+                                event.eventDate
+                              )
+                            : "Date not specified"
+                    }
                 </div>
 
-                ${dateHTML}
-
-                <div class="title">
-                    ${escapeHTML(
-                        prettyName(file.name)
-                    )}
+                <div class="event-title">
+                    ${
+                        prettifyFilename(
+                            event.file.name
+                        )
+                    }
                 </div>
 
-                <div class="open">
+                <a
+                    class="read-story"
+                    href="${event.file.name}"
+                >
                     Read story →
-                </div>
+                </a>
 
             `;
 
 
-            box.appendChild(card);
+            container.appendChild(card);
 
         });
 
     }
-
-
-    catch(error){
+    catch(error) {
 
         console.error(error);
 
-
-        count.textContent =
-            'Unavailable';
-
-
-        box.innerHTML = `
-
-            <div class="error">
-
-                Unable to load the stories automatically.
-
-                <br><br>
-
-                Make sure this GitHub repository is
-                public and GitHub Pages is enabled.
-
+        container.innerHTML = `
+            <div class="loading">
+                Unable to load events.
             </div>
-
         `;
 
     }
@@ -821,12 +1090,511 @@ async function load(){
 
 
 /* =========================================================
-   START
-   ========================================================= */
+   DATE
+========================================================= */
 
-load();
+function formatDate(value) {
+
+    return new Date(
+        value + "T00:00:00"
+    ).toLocaleDateString(
+        "en-IN",
+        {
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+function prettifyFilename(
+    filename
+) {
+
+    return filename
+        .replace(/\.html$/i,"")
+        .replace(/[-_]+/g," ")
+        .replace(/\b\w/g,
+            c => c.toUpperCase()
+        );
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openEventModal() {
+
+    document
+        .getElementById("eventModal")
+        .classList.add("active");
+
+}
+
+
+function closeEventModal() {
+
+    document
+        .getElementById("eventModal")
+        .classList.remove("active");
+
+}
+
+
+function closeOutside(event) {
+
+    if (
+        event.target.id === "eventModal"
+    ) {
+
+        closeEventModal();
+
+    }
+
+}
+
+
+function showStatus(
+    message,
+    type
+) {
+
+    const status =
+        document.getElementById(
+            "eventStatus"
+        );
+
+    status.textContent =
+        message;
+
+    status.className =
+        `status show ${type}`;
+
+}
+
+
+/* =========================================================
+   SLUG
+========================================================= */
+
+function createSlug(name) {
+
+    return name
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g,"-")
+        .replace(/^-+|-+$/g,"");
+
+}
+
+
+/* =========================================================
+   CREATE EVENT
+========================================================= */
+
+async function createEvent() {
+
+    const name =
+        document.getElementById(
+            "eventName"
+        ).value.trim();
+
+
+    const date =
+        document.getElementById(
+            "eventDate"
+        ).value;
+
+
+    const token =
+        document.getElementById(
+            "eventToken"
+        ).value.trim();
+
+
+    if (!name || !date || !token) {
+
+        showStatus(
+            "Please fill in all fields.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const filename =
+        `${createSlug(name)}.html`;
+
+
+    const path =
+        `${monthFolder}/${filename}`;
+
+
+    const button =
+        document.getElementById(
+            "eventSubmit"
+        );
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "Creating...";
+
+
+    try {
+
+        const check =
+            await githubRequest(
+                `contents/${path}`,
+                token,
+                "GET"
+            );
+
+
+        if (check.ok) {
+
+            throw new Error(
+                `${filename} already exists.`
+            );
+
+        }
+
+
+        const html =
+            createEventHTML(
+                name,
+                date
+            );
+
+
+        const response =
+            await githubRequest(
+                `contents/${path}`,
+                token,
+                "PUT",
+                {
+
+                    message:
+                        `Add event: ${name}`,
+
+                    content:
+                        btoa(
+                            unescape(
+                                encodeURIComponent(
+                                    html
+                                )
+                            )
+                        ),
+
+                    branch:"main"
+
+                }
+            );
+
+
+        if (!response.ok) {
+
+            const data =
+                await response.json();
+
+            throw new Error(
+                data.message ||
+                "Unable to create event."
+            );
+
+        }
+
+
+        showStatus(
+            "Event created successfully.",
+            "success"
+        );
+
+
+        setTimeout(() => {
+
+            closeEventModal();
+
+            loadEvents();
+
+        },1500);
+
+    }
+    catch(error) {
+
+        showStatus(
+            error.message,
+            "error"
+        );
+
+    }
+    finally {
+
+        button.disabled = false;
+
+        button.textContent =
+            "Create Event";
+
+    }
+
+}
+
+
+/* =========================================================
+   GITHUB
+========================================================= */
+
+async function githubRequest(
+    endpoint,
+    token,
+    method,
+    body = null
+) {
+
+    return fetch(
+        `https://api.github.com/repos/${owner}/${repo}/${endpoint}`,
+        {
+
+            method,
+
+            headers: {
+
+                "Authorization":
+                    `Bearer ${token}`,
+
+                "Accept":
+                    "application/vnd.github+json",
+
+                "X-GitHub-Api-Version":
+                    "2022-11-28"
+
+            },
+
+            body:
+                body
+                    ? JSON.stringify(body)
+                    : null
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   EVENT TEMPLATE
+========================================================= */
+
+function createEventHTML(
+    name,
+    date
+) {
+
+    const displayDate =
+        new Date(
+            date + "T00:00:00"
+        ).toLocaleDateString(
+            "en-IN",
+            {
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+    return `<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+${name} | Campus Life Chronicle
+</title>
+
+<meta
+    name="event-date"
+    content="${date}"
+>
+
+<style>
+
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#F8F4F0;
+    color:#202020;
+}
+
+.navbar {
+    padding:18px 7%;
+    background:white;
+    border-bottom:1px solid #E8E3DF;
+}
+
+.logo {
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.logo img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.hero {
+    padding:90px 8%;
+    background:#7A1E2D;
+    color:white;
+}
+
+.hero h1 {
+    font-size:clamp(42px,7vw,78px);
+    margin:0;
+}
+
+.hero p {
+    margin-top:20px;
+    opacity:.9;
+}
+
+.article {
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:60px 7%;
+    min-height:500px;
+}
+
+.article h2 {
+    color:#7A1E2D;
+}
+
+.article p {
+    line-height:1.8;
+    color:#555;
+}
+
+.info {
+    padding:20px;
+    margin-top:30px;
+    background:#F8F4F0;
+    border-left:4px solid #7A1E2D;
+}
+
+footer {
+    text-align:center;
+    padding:30px;
+    color:#6F6F6F;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <img
+            src="../gitam-logo.png"
+            alt="GITAM"
+        >
+
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <h1>
+        ${name}
+    </h1>
+
+    <p>
+        ${displayDate}
+    </p>
+
+</section>
+
+<main class="article">
+
+    <h2>
+        About the Event
+    </h2>
+
+    <p>
+        Write your event story here.
+    </p>
+
+
+    <div class="info">
+
+        <strong>
+            Event Date:
+        </strong>
+
+        ${displayDate}
+
+    </div>
+
+
+    <h2>
+        Highlights
+    </h2>
+
+    <p>
+        Add event highlights, photographs,
+        speakers, activities and outcomes here.
+    </p>
+
+</main>
+
+<footer>
+
+    Campus Life Chronicle · GITAM University
+
+</footer>
+
+</body>
+
+</html>`;
+
+}
+
+
+/* =========================================================
+   INITIAL LOAD
+========================================================= */
+
+loadEvents();
 
 </script>
 
 </body>
+
 </html>
